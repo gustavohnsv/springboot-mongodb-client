@@ -1,20 +1,30 @@
 # 🌐 CRUD operations with Spring Boot Java Framework
 
-- Link to access the base API url
+- Link to access the base API url:
 ```
     localhost:8080/api/clients/
 ```
 
+- If you want test the application in your localhost, make sure to make a Cluster in mongoDB and follow this steps:
+
+1. Make a `.env` file and root folder *(/clients)*
+
+2. In the file, insert this line:
+```
+MONGODB_URI=your-mongodb-uri
+```
+
 - Make sure you have a client for HTTP requests, like Insomnia or Postman
 - Make sure you have Java 17 or later
+- This project use Gradle
 
 # ⚙️ Using:
-<div style="width: 50px; display: flex; gap: 20px; align-items: center">
+<div style="display: flex; gap: 20px; align-items: center">
 
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" />
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" />
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gradle/gradle-original.svg" />
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" width="50"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" width="50"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gradle/gradle-original.svg" width="50"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" width="50"/>
 
 </div>
 
@@ -36,103 +46,57 @@
     DELETE  localhost:8080/api/carts/{cart_id}/
 ```
 
-# 🌳 Repository Tree (may be changed often)
+# 🌳 Repository Tree (maybe changed often)
 
 ```
 .
-├── build
-│   ├── classes
-│   │   └── java
-│   │       └── main
-│   │           └── com
-│   │               └── gustavohnsv
-│   │                   └── clients
-│   │                       ├── ClientsApplication.class
-│   │                       ├── config
-│   │                       │   └── DotenvConfig.class
-│   │                       ├── controller
-│   │                       │   ├── ClientController.class
-│   │                       │   ├── HomeController.class
-│   │                       │   └── ShoppingCartsController.class
-│   │                       ├── exception
-│   │                       │   ├── AlreadyExistsException.class
-│   │                       │   ├── CustomExceptionHandler.class
-│   │                       │   ├── ResourceNotFoundException.class
-│   │                       │   ├── TooFewArgumentsException.class
-│   │                       │   └── WrongArgumentsException.class
-│   │                       ├── model
-│   │                       │   ├── Client.class
-│   │                       │   ├── Message.class
-│   │                       │   ├── Product.class
-│   │                       │   └── ShoppingCart.class
-│   │                       └── repository
-│   │                           ├── ClientRepository.class
-│   │                           └── ShoppingCartsRepository.class
-│   ├── generated
-│   │   └── sources
-│   │       ├── annotationProcessor
-│   │       │   └── java
-│   │       │       └── main
-│   │       └── headers
-│   │           └── java
-│   │               └── main
-│   ├── resources
-│   │   └── main
-│   │       ├── application.properties
-│   │       ├── static
-│   │       └── templates
-│   └── tmp
-│       └── compileJava
-│           ├── compileTransaction
-│           │   ├── backup-dir
-│           │   └── stash-dir
-│           │       └── ShoppingCartsController.class.uniqueId0
-│           └── previous-compilation-data.bin
 ├── build.gradle
 ├── gradle
-│   └── wrapper
-│       ├── gradle-wrapper.jar
-│       └── gradle-wrapper.properties
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
 ├── gradlew
 ├── gradlew.bat
 ├── HELP.md
 ├── README.md
 ├── settings.gradle
 └── src
-├── main
-│   ├── java
-│   │   └── com
-│   │       └── gustavohnsv
-│   │           └── clients
-│   │               ├── ClientsApplication.java
-│   │               ├── config
-│   │               │   └── DotenvConfig.java
-│   │               ├── controller
-│   │               │   ├── ClientController.java
-│   │               │   ├── HomeController.java
-│   │               │   └── ShoppingCartsController.java
-│   │               ├── exception
-│   │               │   ├── AlreadyExistsException.java
-│   │               │   ├── CustomExceptionHandler.java
-│   │               │   ├── ResourceNotFoundException.java
-│   │               │   ├── TooFewArgumentsException.java
-│   │               │   └── WrongArgumentsException.java
-│   │               ├── model
-│   │               │   ├── Client.java
-│   │               │   ├── Message.java
-│   │               │   ├── Product.java
-│   │               │   └── ShoppingCart.java
-│   │               └── repository
-│   │                   ├── ClientRepository.java
-│   │                   └── ShoppingCartsRepository.java
-│   └── resources
-│       ├── application.properties
-│       ├── static
-│       └── templates
-└── test
-└── java
-└── com
-└── gustavohnsv
-└── clients
-└── ClientsApplicationTests.java
+    ├── main
+    │   ├── java
+    │   │   └── com
+    │   │       └── gustavohnsv
+    │   │           └── clients
+    │   │               ├── ClientsApplication.java
+    │   │               ├── config
+    │   │               │   └── DotenvConfig.java
+    │   │               ├── controller
+    │   │               │   ├── ClientController.java
+    │   │               │   ├── HomeController.java
+    │   │               │   └── ShoppingCartsController.java
+    │   │               ├── exception
+    │   │               │   ├── CustomExceptionHandler.java
+    │   │               │   ├── ResourceAlreadyExistsException.java
+    │   │               │   ├── ResourceNotFoundException.java
+    │   │               │   ├── TooFewArgumentsException.java
+    │   │               │   └── WrongArgumentsException.java
+    │   │               ├── model
+    │   │               │   ├── Client.java
+    │   │               │   ├── Message.java
+    │   │               │   ├── ProductInfo.java
+    │   │               │   ├── Product.java
+    │   │               │   └── ShoppingCart.java
+    │   │               └── repository
+    │   │                   ├── ClientRepository.java
+    │   │                   └── ShoppingCartsRepository.java
+    │   └── resources
+    │       ├── application.properties
+    │       ├── static
+    │       └── templates
+    └── test
+        └── java
+            └── com
+                └── gustavohnsv
+                    └── clients
+                        └── ClientsApplicationTests.java
+
 ```
