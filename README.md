@@ -11,14 +11,14 @@
 
 2. In the file, insert this line:
 ```
-MONGODB_URI=your-mongodb-uri
+    MONGODB_URI=your-mongodb-uri
 ```
 
 - Make sure you have a client for HTTP requests, like Insomnia or Postman
 - Make sure you have Java 17 or later
 - This project use Gradle
 
-# ⚙️ Using:
+# ⚙️ Using
 <div style="display: flex; gap: 20px; align-items: center">
 
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" width="50"/>
