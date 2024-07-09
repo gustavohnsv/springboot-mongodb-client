@@ -7,7 +7,7 @@
 
 - If you want test the application in your localhost, make sure to make a Cluster in mongoDB and follow this steps:
 
-1. Make a `.env` file and root folder *(/clients)*
+1. Make a `.env` file in root folder *(/clients)*
 
 2. In the file, insert this line:
 ```
